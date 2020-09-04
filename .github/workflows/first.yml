@@ -6,7 +6,6 @@ jobs:
     name: My Job
     runs-on: ubuntu-latest
     steps:
-      - 
         name: Print a greeting
         env:
           MY_VAR: Hi there! My name is
