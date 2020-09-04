@@ -7,9 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Before Checkout 🛎️
-      uses: actions/checkout@v2.3.1 
-      uses: actions/setup-node@v2.1.0
-      with:
+    - uses: actions/checkout@v2.3.1 
+    - uses: actions/setup-node@v2.1.0
+        with:
         node-version: "14"  
 
     - name: Step1 ----- Print a greeting
