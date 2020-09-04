@@ -33,8 +33,4 @@ jobs:
         node-version: '14'
     - run: npm install
     - run: npm -v && node -v
-    - run: node index.js    
-	  
-
-	    
-           
+    - run: node index.js
