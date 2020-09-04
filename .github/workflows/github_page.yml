@@ -1,5 +1,10 @@
 name: Build and Deploy
-on: [push]
+on:
+  watch:
+    types: [started]
+  push:
+    branches: 
+      - master
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -20,3 +25,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: dist # The folder the action should deploy.
+      - name: Step4---查看时间 🚀
+        run: |
+          date
+          top
+
