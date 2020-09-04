@@ -28,5 +28,5 @@ jobs:
       - name: Step4---查看时间 🚀
         run: |
           date
-          top
+          date  '+%Y-%m-%d %H:%M'
 
