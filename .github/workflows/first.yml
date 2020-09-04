@@ -28,4 +28,8 @@ jobs:
           date 
           
     - name: Step3 ----- setting Node ENV
+      uses: actions/setup-node@v2.1.0
+      with:
+        node-version: "14"  
       run: npm -v && node -v
+      run: node index.js
