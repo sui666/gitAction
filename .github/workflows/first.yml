@@ -31,5 +31,4 @@ jobs:
           date 
           
     - name: Step3 ----- run Node 
-      run: npm -v && node -v
-      run: node index.js
+     
