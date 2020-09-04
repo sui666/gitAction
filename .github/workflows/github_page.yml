@@ -1,7 +1,7 @@
 name: Build and Deploy
 on:
   watch:
-    types: [started]
+    #types: [started]
   push:
     branches: 
       - master
@@ -28,5 +28,5 @@ jobs:
       - name: Step4---查看时间 🚀
         run: |
           date
-          date  '+%Y-%m-%d %H:%M'
+          date '+%Y-%m-%d %H:%M'
 
