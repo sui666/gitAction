@@ -26,3 +26,15 @@ jobs:
         LAST_NAME: Octocat
       run: |
           date 
+          
+    - name: Step3 ----- setting Node ENV
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '14'
+    - run: npm install
+    - run: npm -v && node -v
+    - run: node index.js    
+	  
+
+	    
+           
