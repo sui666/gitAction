@@ -6,18 +6,16 @@ jobs:
     name: js build_and_test
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository 🛎️
-      uses: actions/checkout@v2.3.1 
+      - name: Checkout repository 🛎️
+        uses: actions/checkout@v2.3.1 
           
-    - name: npm install, build 🤣
-      run: |
-        npm -v && node -v && node index.js
-        npm install 
-        npm run build 
-    - name: Archive production artifacts 🥰
-        uses: actions/upload-artifact@v2
-        with:
-          name: dist-project
-          path: dist
-  
-            
+      - name: npm install, build 🤣
+        run: |
+          npm -v && node -v && node index.js
+          npm install 
+          npm run build 
+      - name: Archive production artifacts 🥰
+          uses: actions/upload-artifact@v2
+          with:
+            name: dist
+            path: dist
