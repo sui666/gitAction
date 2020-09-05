@@ -14,15 +14,10 @@ jobs:
         npm -v && node -v && node index.js
         npm install 
         npm run build 
-     
     - name: Archive production artifacts 🥰
         uses: actions/upload-artifact@v2
         with:
           name: dist-project
           path: dist
-    - name: Archive production artifacts 🥰
-        uses: actions/upload-artifact@v2
-        with:
-          name: index.js
-          path: index.js    
+  
             
