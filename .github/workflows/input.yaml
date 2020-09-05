@@ -1,0 +1,19 @@
+name: 输入输出值示例
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: '名字'
+        required: true
+        default: '这是一个默认值'
+      home:
+        description: '地址'
+        required: false
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "Hello ${{ github.event.inputs.name }}!"
+        echo "- in ${{ github.event.inputs.home }}!"
