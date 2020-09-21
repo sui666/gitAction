@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup Debug Session
-        uses: sui28456049/debugger-action
+        uses: sui28456049/debugger-action@master
 
       - name: long limit setting
         run: |
