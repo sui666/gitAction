@@ -6,9 +6,6 @@ jobs:
     name: ssh-connect
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@master
-
       - name: Setup Debug Session
         uses: P3TERX/debugger-action@master
 
