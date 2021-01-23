@@ -1,4 +1,4 @@
-name: ssh连接
+name: ssh连接/https://github.com/P3TERX/ssh2actions
 on: push
 
 jobs:
@@ -6,21 +6,25 @@ jobs:
     name: ssh-connect
     runs-on: ubuntu-latest
     steps:
-      - name: Public IP
-        id: ip
-        uses: haythem/public-ip@v1
-
-      - name: Print Public IP
-        run: |
-          echo ${{ steps.ip.outputs.ipv4 }}
-          echo ${{ steps.ip.outputs.ipv6 }}
       - name: Checkout Repo
         uses: actions/checkout@master
     
-      - name: 
-        uses: P3TERX/debugger-action@main
+      - name: Start SSH via ngrok
+        uses: P3TERX/ssh2actions@main
+        with:
+          mode: ngrok
+        env:
+          # After sign up on the https://ngrok.com
+          # You can find this token here: https://dashboard.ngrok.com/auth/your-authtoken
+          NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
+          
+          # ngrok server region [us, eu, au, ap, sa, jp, in] (optional, default: us)
+          # You can find this server region here: https://ngrok.com/docs#global-locations
+          NGROK_REGION: us
+
+          # This password you will use when authorizing via SSH
+          SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
 
       - name: long limit setting
         run: |
           date && touch /tmp/keepalive
-       
